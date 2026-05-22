@@ -1,23 +1,44 @@
-﻿function Navbar() {
+﻿import { useState, useEffect } from 'react'
+
+function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+  const [active, setActive] = useState('home')
+
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40)
+      const sections = ['home', 'about', 'projects', 'skills', 'contact']
+      for (const id of [...sections].reverse()) {
+        const el = document.getElementById(id)
+        if (el && window.scrollY + 120 >= el.offsetTop) {
+          setActive(id)
+          break
+        }
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const links = [
+    { href: '#home', label: 'Home', id: 'home' },
+    { href: '#about', label: 'About', id: 'about' },
+    { href: '#projects', label: 'Work', id: 'projects' },
+    { href: '#skills', label: 'Skills', id: 'skills' },
+    { href: '#contact', label: 'Contact', id: 'contact' },
+  ]
+
   return (
-    <nav className="navbar">
+    <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-brand">Piumi Abeygunasekera</div>
       <ul className="nav-links">
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#projects">Work</a>
-        </li>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
+        {links.map(l => (
+          <li key={l.id}>
+            <a href={l.href} className={active === l.id ? 'active' : ''}>
+              {l.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   )

@@ -2,8 +2,10 @@ import Navbar from './components/Navbar'
 import Hero from './sections/Hero'
 import About from './sections/About'
 import Projects from './sections/Projects'
-import Skills from './sections/Skills'
+import Skills from './sections/Skills';
+import SoftSkills from './sections/SoftSkills'
 import Contact from './sections/Contact'
+import './styles/main.css'
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
         <About />
         <Projects />
         <Skills />
+        <SoftSkills />
       </main>
       <Contact />
     </div>

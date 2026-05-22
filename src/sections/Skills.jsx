@@ -1,51 +1,41 @@
+import { useReveal } from '../components/useReveal'
+
+const skills = [
+  {
+    category: 'Languages',
+    items: ['Python', 'Java', 'JavaScript', 'C', 'SQL'],
+  },
+  {
+    category: 'Web / Backend',
+    items: ['HTML / CSS / Tailwind', 'React.js', 'Node.js / Express', 'Spring Boot', 'JSP / Servlets'],
+  },
+  {
+    category: 'Data & AI',
+    items: ['Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow', 'Data Visualization'],
+  },
+  {
+    category: 'Tools',
+    items: ['Git / GitHub', 'VS Code', 'IntelliJ IDEA', 'Postman', 'Arduino IDE'],
+  },
+]
+
 function Skills() {
+  const ref = useReveal()
   return (
-    <section className="skills-section" id="skills">
+    <section className="skills-section reveal" ref={ref} id="skills">
       <div className="section-head">
-        <span>Skills</span>
+        <span className="label">Skills</span>
         <h2>What I work with</h2>
       </div>
       <div className="skill-grid">
-        <div className="skill-card">
-          <h4>Languages</h4>
-          <ul>
-            <li>Python</li>
-            <li>Java</li>
-            <li>JavaScript</li>
-            <li>C</li>
-            <li>SQL</li>
-          </ul>
-        </div>
-        <div className="skill-card">
-          <h4>Web / Backend</h4>
-          <ul>
-            <li>HTML / CSS / Tailwind</li>
-            <li>React.js</li>
-            <li>Node.js / Express</li>
-            <li>Spring Boot</li>
-            <li>JSP / Servlets</li>
-          </ul>
-        </div>
-        <div className="skill-card">
-          <h4>Data & AI</h4>
-          <ul>
-            <li>Pandas</li>
-            <li>NumPy</li>
-            <li>Scikit-learn</li>
-            <li>TensorFlow</li>
-            <li>Data Visualization</li>
-          </ul>
-        </div>
-        <div className="skill-card">
-          <h4>Tools</h4>
-          <ul>
-            <li>Git / GitHub</li>
-            <li>VS Code</li>
-            <li>IntelliJ IDEA</li>
-            <li>Postman</li>
-            <li>Arduino IDE</li>
-          </ul>
-        </div>
+        {skills.map((s, i) => (
+          <div className="skill-card" key={i}>
+            <h4>{s.category}</h4>
+            <ul>
+              {s.items.map((item, j) => <li key={j}>{item}</li>)}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   )

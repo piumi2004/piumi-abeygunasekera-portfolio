@@ -1,53 +1,73 @@
+import { useReveal } from '../components/useReveal'
+
+const projects = [
+  {
+    title: 'Zentra Zoo — Zoo & Visitor Engagement App',
+    url: 'https://github.com/chanithiperera/Zoo-Management.git',
+    period: 'Jan 2026 – May 2026',
+    items: [
+      'Full-stack Zoo Management web application using the MERN stack.',
+      'Online ticket booking, event management, and group reservation features.',
+      'E-commerce store for zoo merchandise with cart and order management.',
+      'Responsive React frontend with team-based development via Git & GitHub.',
+    ],
+  },
+  {
+    title: 'Govi Smart — Fertilizer Recommendation & Resource Management',
+    url: 'https://github.com/chanithiperera/Smart_Fertilizer_Recommendation.git',
+    period: 'Feb 2026 – May 2026',
+    items: [
+      'ML model for fertilizer recommendations based on agricultural data for paddy cultivation.',
+      'Modules for machinery rental, product marketplace, inventory, and order management.',
+      'Role-based access for Admins, Sellers, Agents, and Users.',
+      'Flask APIs + MongoDB + Cloudinary + MERN stack full-stack platform.',
+    ],
+  },
+  {
+    title: 'Dine & Delight — Restaurant and Event Management',
+    url: 'https://github.com/piumi2004/Dine-Delight.git',
+    period: 'Jul 2025 – Nov 2025',
+    items: [
+      'Table reservation and event booking features for restaurants.',
+      'Layered architecture with controllers, services, and repositories.',
+      'Customer and admin workflows with reliable MySQL persistence.',
+    ],
+  },
+  {
+    title: 'Chapters & Beyond — Online Bookstore Management',
+    url: 'https://github.com/piumi2004/online-bookstore-management-system.git',
+    period: 'Feb 2025 – Jul 2025',
+    items: [
+      'Dynamic bookstore app using MVC architecture and OOP design.',
+      'CRUD management for books, users, and orders.',
+      'Responsive UI with JSP and Tailwind CSS.',
+    ],
+  },
+]
+
 function Projects() {
+  const ref = useReveal()
   return (
-    <section className="projects-section" id="projects">
+    <section className="projects-section reveal" ref={ref} id="projects">
       <div className="section-head">
-        <span>Work</span>
+        <span className="label">Work</span>
         <h2>Featured Projects</h2>
       </div>
       <div className="project-grid">
-        <article className="project-card">
-          <h3><a className="project-title-link" href="https://github.com/chanithiperera/Zoo-Management.git" target="_blank" rel="noopener noreferrer">Zentra Zoo — Zoo &amp; Visitor Engagement App <span className="link-icon">↗</span></a></h3>
-          <p className="project-meta">Jan 2026 – May 2026</p>
-          <ul>
-            <li>Developed a full-stack Zoo Management web application using the MERN stack.</li>
-            <li>Implemented online ticket booking, event management, and group reservation features.</li>
-            <li>Built an e-commerce store for zoo merchandise with cart and order management.</li>
-            <li> Designed responsive and user-friendly frontend interfaces using React.</li>
-            <li> Contributed to database design, system functionality, testing, and debugging.</li>
-            <li> Collaborated within a team using Git and GitHub for project management and version control.</li>
-          </ul>
-        </article>
-        <article className="project-card">
-          <h3><a className="project-title-link" href="https://github.com/chanithiperera/Smart_Fertilizer_Recommendation.git" target="_blank" rel="noopener noreferrer">Govi Smart- Smart Fertilizer Recommendation & Resource Management  <span className="link-icon">↗</span></a></h3>
-          <p className="project-meta">Feb 2026 – May 2026</p>
-          <ul>
-            <li>Developed a Smart Fertilizer Recommendation and Agricultural Resource Management System for paddy cultivation.</li>
-            <li>Integrated a machine learning model to provide fertilizer recommendations based on agricultural data.</li>
-            <li>Built modules for machinery rental, product marketplace, inventory handling, and order management.</li>
-            <li>Implemented role-based management features for Admins, Sellers, Agents, and Users.</li>
-            <li>Developed machinery booking and rental tracking features with dynamic cost calculation and availability management.</li>
-            <li>Integrated Flask APIs, MongoDB, Cloudinary, and the MERN stack to create a responsive full-stack platform.</li>
-          </ul>
-        </article>
-        <article className="project-card">
-          <h3><a className="project-title-link" href="https://github.com/piumi2004/Dine-Delight.git" target="_blank" rel="noopener noreferrer">Dine &amp; Delight - Restaurant and Event Management System  <span className="link-icon">↗</span></a></h3>
-          <p className="project-meta">Jul 2025 – Nov 2025</p>
-          <ul>
-            <li>Developed table reservation and event booking features for restaurants.</li>
-            <li>Implemented controllers, services, and repositories in a layered architecture.</li>
-            <li>Built customer and admin workflows with reliable MySQL persistence.</li>
-          </ul>
-        </article>
-        <article className="project-card">
-          <h3><a className="project-title-link" href="https://github.com/piumi2004/online-bookstore-management-system.git" target="_blank" rel="noopener noreferrer"> Chapters & Beyond - Online Bookstore Management System <span className="link-icon">↗</span></a></h3>
-          <p className="project-meta">Feb 2025 – Jul 2025</p>
-          <ul>
-            <li>Created a dynamic bookstore app using MVC architecture and OOP design.</li>
-            <li>Designed CRUD management for books, users, and orders.</li>
-            <li>Implemented a responsive UI with JSP and Tailwind CSS.</li>
-          </ul>
-        </article>
+        {projects.map((p, i) => (
+          <article className="project-card" key={i}>
+            <h3>
+              <a className="project-title-link" href={p.url} target="_blank" rel="noopener noreferrer">
+                {p.title}
+                <span className="link-icon" aria-hidden="true">↗</span>
+              </a>
+            </h3>
+            <p className="project-meta">{p.period}</p>
+            <ul>
+              {p.items.map((item, j) => <li key={j}>{item}</li>)}
+            </ul>
+          </article>
+        ))}
       </div>
     </section>
   )

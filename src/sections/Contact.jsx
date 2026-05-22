@@ -23,17 +23,17 @@ function Contact() {
         <div className="footer-links-group">
           <h4>Contact</h4>
           <ul>
-            <li><a href="mailto:[abeygunasekerap2004@gmail.com]">abeygunasekerap2004@gmail.com</a></li>
+            <li><a href="mailto:abeygunasekerap2004@gmail.com">abeygunasekerap2004@gmail.com</a></li>
             <li><a href="tel:+94761989879">+94 761 989 879</a></li>
-            <li><a href="https://maps.app.goo.gl/d3aLfFvyEmJDMPHm8">Nawala, Colombo</a></li>
+            <li><a href="https://maps.app.goo.gl/d3aLfFvyEmJDMPHm8" target="_blank" rel="noopener noreferrer">Nawala, Colombo</a></li>
           </ul>
         </div>
 
         <div className="footer-links-group">
           <h4>Socials</h4>
           <ul>
-            <li><a href="https://www.linkedin.com/in/piumi-abeygunasekera-a847243a7/">LinkedIn</a></li>
-            <li><a href="https://github.com/piumi2004">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/piumi-abeygunasekera-a847243a7/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/piumi2004" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           </ul>
         </div>
       </div>
