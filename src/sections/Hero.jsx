@@ -18,7 +18,7 @@ function Hero() {
       <div className={`hero-content reveal`} ref={ref}>
         <div className="hero-copy">
           <div className="eyebrow" aria-hidden="true">Available for work</div>
-          <h1>Hi, I&apos;m Piumi.</h1>
+          <h1>Hi, I&apos;m Piumi</h1>
           <p>
             Data Science undergraduate with interests in tech, problem solving,
             and building practical solutions - while enjoying reading, music, and storytelling.
