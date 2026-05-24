@@ -2,14 +2,9 @@ import React from 'react';
 
 const certifications = [
   {
-    title: 'Web Design For Beginners',
-    issuer: 'University of Moratuwa',
-    date: 'Mar 2026',
-  },
-  {
-    title: 'Introduction to Data Science',
-    issuer: 'Cisco Networking Academy',
-    date: 'Feb 2026',
+    title: 'Professional Certificate in Web Development',
+    issuer: 'Informatics Institute of Technology',
+    date: 'Nov 2025',
   },
   {
     title: 'AI/ML Engineer - Stage 1',
@@ -17,8 +12,13 @@ const certifications = [
     date: 'Jan 2026',
   },
   {
-    title: 'Professional Certificate in Web Development',
-    issuer: 'Informatics Institute of Technology',
+    title: 'Introduction to Data Science',
+    issuer: 'Cisco Networking Academy',
+    date: 'Feb 2026',
+  },
+  {
+    title: 'Web Design For Beginners',
+    issuer: 'University of Moratuwa',
     date: 'Mar 2026',
   },
 ];
