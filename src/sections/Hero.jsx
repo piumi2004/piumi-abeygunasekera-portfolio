@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import profilePhoto from '../assets/PXL_20250929_052441773~2.jpg'
+import pdfFile from '../assets/Piumi Abeygunasekera CV Upd.pdf'
 
 function Hero() {
   const ref = useRef(null)
@@ -30,6 +31,8 @@ function Hero() {
                 <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
+            <a className="cta-button" href={pdfFile} download="Piumi_Abeygunasekera_CV.pdf">Download CV</a>
+
             <a className="ghost-link" href="#contact">
               Contact Me
             </a>
