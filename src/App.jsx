@@ -4,6 +4,7 @@ import About from './sections/About'
 import Projects from './sections/Projects'
 import Skills from './sections/Skills';
 import SoftSkills from './sections/SoftSkills'
+import Certifications from './sections/Certifications'
 import Contact from './sections/Contact'
 import './styles/main.css'
 
@@ -15,6 +16,7 @@ function App() {
         <Hero />
         <About />
         <Projects />
+        <Certifications />
         <Skills />
         <SoftSkills />
       </main>

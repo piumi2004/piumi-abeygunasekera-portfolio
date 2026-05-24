@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -7,7 +7,7 @@ function Navbar() {
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40)
-      const sections = ['home', 'about', 'projects', 'skills', 'contact']
+      const sections = ['home', 'about', 'projects', 'certifications', 'skills', 'contact'];
       for (const id of [...sections].reverse()) {
         const el = document.getElementById(id)
         if (el && window.scrollY + 120 >= el.offsetTop) {
@@ -24,6 +24,7 @@ function Navbar() {
     { href: '#home', label: 'Home', id: 'home' },
     { href: '#about', label: 'About', id: 'about' },
     { href: '#projects', label: 'Work', id: 'projects' },
+    { href: '#certifications', label: 'Certifications', id: 'certifications' },
     { href: '#skills', label: 'Skills', id: 'skills' },
     { href: '#contact', label: 'Contact', id: 'contact' },
   ]
