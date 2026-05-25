@@ -1,8 +1,11 @@
+import { useReveal } from '../components/useReveal'
+
 function SoftSkills() {
+  const ref = useReveal()
   return (
-    <section className="skills-section" id="soft-skills">
+    <section className="skills-section reveal" ref={ref} id="soft-skills">
       <div className="section-head">
-        <span>Soft Skills</span>
+        <span className="label">Soft Skills</span>
         <h2>What I bring beyond tech</h2>
       </div>
       <div className="skill-grid">

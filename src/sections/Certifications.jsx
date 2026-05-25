@@ -1,4 +1,5 @@
 import React from 'react';
+import { useReveal } from '../components/useReveal'
 
 const certifications = [
   {
@@ -24,8 +25,9 @@ const certifications = [
 ];
 
 function Certifications() {
+  const ref = useReveal()
   return (
-    <section className="certifications-section" id="certifications">
+    <section className="certifications-section reveal" ref={ref} id="certifications">
       <div className="section-head">
         <span className="label">Certifications</span>
         <h2>Professional Certifications</h2>

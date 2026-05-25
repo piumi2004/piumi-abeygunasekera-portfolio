@@ -1,6 +1,9 @@
+import { useReveal } from '../components/useReveal'
+
 function Contact() {
+  const ref = useReveal()
   return (
-    <footer className="site-footer" id="contact">
+    <footer className="site-footer reveal" ref={ref} id="contact">
       <div className="footer-inner">
         <div className="footer-brand">
           <div className="footer-name">Piumi Abeygunasekera</div>
