@@ -1,0 +1,16 @@
+/* Project cover image styling */
+.project-image {
+  width: 100%;
+  height: auto;
+  max-height: 250px; /* limit height for uniform cards */
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.project-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}

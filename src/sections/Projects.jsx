@@ -1,9 +1,17 @@
 import { useReveal } from '../components/useReveal'
+import zooImg from '../assets/zoo.png'
+import goviImg from '../assets/fertilizer.png'
+import dineImg from '../assets/restaurent.png'
+import chaptersImg from '../assets/bookstore.png';
+import '../styles/projectImage.css';
+
+
 
 const projects = [
   {
     title: 'Zentra Zoo — Zoo & Visitor Engagement App',
     url: 'https://github.com/chanithiperera/Zoo-Management.git',
+    image: zooImg,
     period: 'Jan 2026 – May 2026',
     items: [
       'Full-stack Zoo Management web application using the MERN stack.',
@@ -15,6 +23,7 @@ const projects = [
   {
     title: 'Govi Smart — Fertilizer Recommendation & Resource Management',
     url: 'https://github.com/chanithiperera/Smart_Fertilizer_Recommendation.git',
+    image: goviImg,
     period: 'Feb 2026 – May 2026',
     items: [
       'ML model for fertilizer recommendations based on agricultural data for paddy cultivation.',
@@ -26,6 +35,7 @@ const projects = [
   {
     title: 'Dine & Delight — Restaurant and Event Management',
     url: 'https://github.com/piumi2004/Dine-Delight.git',
+    image: dineImg,
     period: 'Jul 2025 – Nov 2025',
     items: [
       'Table reservation and event booking features for restaurants.',
@@ -36,6 +46,7 @@ const projects = [
   {
     title: 'Chapters & Beyond — Online Bookstore Management',
     url: 'https://github.com/piumi2004/online-bookstore-management-system.git',
+    image: chaptersImg,
     period: 'Feb 2025 – Jul 2025',
     items: [
       'Dynamic bookstore app using MVC architecture and OOP design.',
@@ -56,6 +67,7 @@ function Projects() {
       <div className="project-grid">
         {projects.map((p, i) => (
           <article className="project-card" key={i}>
+            <img src={p.image} alt={p.title} className="project-image" />
             <h3>
               <a className="project-title-link" href={p.url} target="_blank" rel="noopener noreferrer">
                 {p.title}
