@@ -2,6 +2,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-height: 100%;
 }
 
 * {
@@ -25,13 +27,11 @@ html {
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-html,
 body {
   min-height: 100%;
   background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  overflow-x: hidden;
 }
 
 body {
@@ -88,7 +88,19 @@ button {
   transform: translateY(0);
 }
 
-/* Stagger for grid cards & columns */
+/* Stagger for grid cards & columns using keyframe animations */
+@keyframes revealPopup {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .reveal .project-card,
 .reveal .skill-card,
 .reveal .cert-card,
@@ -98,8 +110,6 @@ button {
 .reveal .footer-links-group {
   opacity: 0;
   transform: translateY(24px) scale(0.97);
-  transition: opacity 0.9s cubic-bezier(0.34, 1.3, 0.64, 1), transform 0.9s cubic-bezier(0.34, 1.3, 0.64, 1);
-  will-change: transform, opacity;
 }
 
 .reveal.visible .project-card,
@@ -111,46 +121,52 @@ button {
 .reveal.visible .footer-links-group {
   opacity: 1;
   transform: translateY(0) scale(1);
+  animation: revealPopup 0.9s cubic-bezier(0.34, 1.3, 0.64, 1) backwards;
 }
 
-/* Stagger delays for children */
-.reveal.visible .about-bio { transition-delay: 0.2s; }
-.reveal.visible .about-education-column { transition-delay: 0.35s; }
+/* Stagger delays for children using animation-delay */
+.reveal.visible .about-bio {
+  animation-delay: 0.2s;
+}
+
+.reveal.visible .about-education-column {
+  animation-delay: 0.35s;
+}
 
 .reveal.visible .project-card:nth-child(1),
 .reveal.visible .skill-card:nth-child(1),
 .reveal.visible .cert-card:nth-child(1),
 .reveal.visible .footer-brand {
-  transition-delay: 0.2s;
+  animation-delay: 0.2s;
 }
 
 .reveal.visible .project-card:nth-child(2),
 .reveal.visible .skill-card:nth-child(2),
 .reveal.visible .cert-card:nth-child(2),
 .reveal.visible .footer-links-group:nth-child(2) {
-  transition-delay: 0.35s;
+  animation-delay: 0.35s;
 }
 
 .reveal.visible .project-card:nth-child(3),
 .reveal.visible .skill-card:nth-child(3),
 .reveal.visible .cert-card:nth-child(3),
 .reveal.visible .footer-links-group:nth-child(3) {
-  transition-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .reveal.visible .project-card:nth-child(4),
 .reveal.visible .skill-card:nth-child(4),
 .reveal.visible .cert-card:nth-child(4),
 .reveal.visible .footer-links-group:nth-child(4) {
-  transition-delay: 0.65s;
+  animation-delay: 0.65s;
 }
 
 .reveal.visible .skill-card:nth-child(5) {
-  transition-delay: 0.8s;
+  animation-delay: 0.8s;
 }
 
 .reveal.visible .skill-card:nth-child(6) {
-  transition-delay: 0.95s;
+  animation-delay: 0.95s;
 }
 
 /* Simple reveal delays if needed elsewhere */
@@ -256,7 +272,7 @@ button {
 
 /* ── Page wrapper ─────────────────────────── */
 .page-wrapper {
-  width: 100vw;
+  width: 100%;
   max-width: none;
   margin: 0;
   padding: 0;
@@ -666,7 +682,7 @@ button {
 }
 
 .info-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) scale(1.015);
   border-color: rgba(184, 125, 255, 0.25);
   box-shadow: 0 16px 40px rgba(80, 20, 150, 0.2);
 }
@@ -722,8 +738,9 @@ button {
   transition: opacity 0.4s;
 }
 
-.project-card:hover {
-  transform: translateY(-6px);
+.project-card:hover,
+.reveal.visible .project-card:hover {
+  transform: translateY(-6px) scale(1.015);
   border-color: rgba(184, 125, 255, 0.3);
   box-shadow: 0 24px 64px rgba(60, 10, 120, 0.25);
 }
@@ -817,8 +834,9 @@ button {
   overflow: hidden;
 }
 
-.cert-card:hover {
-  transform: translateY(-5px);
+.cert-card:hover,
+.reveal.visible .cert-card:hover {
+  transform: translateY(-5px) scale(1.015);
   border-color: rgba(184, 125, 255, 0.25);
   box-shadow: 0 16px 40px rgba(60, 10, 120, 0.2);
 }
@@ -868,8 +886,9 @@ button {
   transition: transform 0.4s var(--ease-out);
 }
 
-.skill-card:hover {
-  transform: translateY(-5px);
+.skill-card:hover,
+.reveal.visible .skill-card:hover {
+  transform: translateY(-5px) scale(1.015);
   border-color: rgba(184, 125, 255, 0.25);
   box-shadow: 0 16px 40px rgba(60, 10, 120, 0.2);
 }
