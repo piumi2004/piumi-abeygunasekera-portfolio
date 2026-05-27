@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { useReveal } from '../components/useReveal';
 
+// TODO: Replace with your actual Formspree endpoint URL
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mbdbpbql';
+
 function ContactForm() {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const ref = useReveal();
@@ -10,11 +13,31 @@ function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // For now, just show an alert. In a real app, integrate with a backend or email service.
-    alert('Message sent! Thank you, ' + formData.name + '.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      alert('Please fill out all required fields.');
+      return;
+    }
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        alert('Message sent! Thank you, ' + formData.name + '.');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        const errorData = await response.json();
+        console.error('Formspree error:', errorData);
+        alert('Failed to send message. Please try again later.');
+      }
+    } catch (err) {
+      console.error('Network error:', err);
+      alert('Failed to send message. Please try again later.');
+    }
   };
 
   return (

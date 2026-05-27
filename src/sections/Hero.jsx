@@ -25,12 +25,6 @@ function Hero() {
             and building practical solutions - while enjoying reading, music, and storytelling.
           </p>
           <div className="hero-actions">
-            <a className="cta-button" href="#projects">
-              View Work
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
             <a className="cta-button" href={pdfFile} download="Piumi_Abeygunasekera_CV.pdf">Download CV</a>
 
             <a className="ghost-link" href="#contact">
