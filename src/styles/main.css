@@ -270,6 +270,139 @@ button {
   background: rgba(184, 125, 255, 0.12);
 }
 
+/* Hamburger button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 200;
+  order: -1;
+}
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile side drawer */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 250px;
+  height: 100vh;
+  background: var(--bg);
+  box-shadow: 4px 0 12px rgba(0,0,0,0.4);
+  transition: left 0.3s ease;
+  z-index: 500;
+  padding-top: 80px;
+}
+.mobile-menu.open {
+  left: 0 !important;
+}
+.mobile-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 1.5rem;
+}
+.mobile-menu .nav-brand {
+  margin: 0.5rem 0 1rem 0.5rem; /* reduced left margin, close to hamburger */
+  font-size: 1.2rem;
+}
+.mobile-menu li {
+  margin: 1rem 0;
+}
+.mobile-menu a {
+  color: var(--text);
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  padding: 0.5rem 0;
+}
+
+/* Overlay */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 400;
+}
+
+/* Show hamburger on small screens */
+@media (max-width: 992px) {
+  /* Navbar adjustments */
+  .navbar {
+    justify-content: flex-start;
+  }
+  .nav-brand {
+    margin-left: 0.5rem; /* small gap after hamburger */
+  }
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .mobile-menu {
+    overflow: hidden; /* prevent scrolling inside drawer */
+  }
+
+  /* Grid overrides for mobile */
+  .about-grid,
+  .cert-grid,
+  .project-grid,
+  .skill-grid,
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Section padding for mobile */
+  .contact-form-section,
+  .certifications-section,
+  .about-section,
+  .projects-section,
+  .skills-section {
+    padding: 2rem 1.5rem;
+  }
+
+  /* Ensure cards take full width */
+  .cert-card,
+  .project-card,
+  .skill-card {
+    width: 100%;
+  }
+
+  /* Contact form inputs full width */
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+  }
+
+  .contact-form .cta-button {
+    align-self: flex-start;
+  }
+}
+
 /* ── Page wrapper ─────────────────────────── */
 .page-wrapper {
   width: 100%;
