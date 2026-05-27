@@ -293,6 +293,69 @@ button {
   overflow: hidden;
 }
 
+/* ── Contact Form Section ─────────────────────── */
+.contact-form-section {
+  padding: 3rem 3.5rem;
+  margin-bottom: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-row label {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  font-family: var(--font-body);
+  resize: vertical;
+  transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(184, 125, 255, 0.2);
+}
+
+textarea {
+  min-height: 120px;
+}
+
+/* Ensure the submit button matches global CTA styling */
+.contact-form .cta-button {
+  justify-self: start;
+  min-width: 140px;
+}
+
+
 .hero-section,
 .about-section,
 .projects-section,

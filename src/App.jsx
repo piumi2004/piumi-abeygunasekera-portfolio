@@ -5,6 +5,7 @@ import Projects from './sections/Projects'
 import Skills from './sections/Skills';
 import SoftSkills from './sections/SoftSkills'
 import Certifications from './sections/Certifications'
+import ContactForm from './sections/ContactForm'
 import Contact from './sections/Contact'
 import './styles/main.css'
 
@@ -19,6 +20,7 @@ function App() {
         <Certifications />
         <Skills />
         <SoftSkills />
+        <ContactForm />
       </main>
       <Contact />
     </div>
