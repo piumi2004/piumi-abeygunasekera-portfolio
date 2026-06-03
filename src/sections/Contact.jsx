@@ -27,7 +27,6 @@ function Contact() {
           <h4>Contact</h4>
           <ul>
             <li><a href="mailto:abeygunasekerap2004@gmail.com">abeygunasekerap2004@gmail.com</a></li>
-            <li><a href="tel:+94761989879">+94 761 989 879</a></li>
             <li><a href="https://maps.app.goo.gl/d3aLfFvyEmJDMPHm8" target="_blank" rel="noopener noreferrer">Nawala, Colombo</a></li>
           </ul>
         </div>
