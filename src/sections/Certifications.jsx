@@ -18,6 +18,11 @@ const certifications = [
     date: 'Feb 2026',
   },
   {
+    title: 'Data Analytics Essentials',
+    issuer: 'Cisco Networking Academy',
+    date: 'Jun 2026',
+  },
+  {
     title: 'Web Design For Beginners',
     issuer: 'University of Moratuwa',
     date: 'Mar 2026',

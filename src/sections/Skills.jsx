@@ -7,15 +7,15 @@ const skills = [
   },
   {
     category: 'Web / Backend',
-    items: ['HTML / CSS / Tailwind', 'React.js', 'Node.js / Express', 'Spring Boot', 'JSP / Servlets'],
+    items: ['HTML / CSS / Tailwind', 'React', 'Node.js & Express', 'Spring Boot', 'JSP / Servlets'],
   },
   {
     category: 'Data & AI',
-    items: ['Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow', 'Data Visualization'],
+    items: ['Pandas', 'NumPy', 'Scikit-learn', 'TensorFlow', 'Matplotlib', 'Seaborn'],
   },
   {
     category: 'Tools',
-    items: ['Git / GitHub', 'VS Code', 'IntelliJ IDEA', 'Postman', 'Arduino IDE'],
+    items: ['Git / GitHub', 'VS Code', 'IntelliJ IDEA', 'Postman', 'Arduino IDE','Power BI'],
   },
 ]
 
